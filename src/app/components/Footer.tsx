@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowUpRight, Instagram, Twitter, Linkedin, Mail, X, Send } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   return (
     <>
-      <footer className="relative bg-neutral-950 py-32 px-6 overflow-hidden border-t border-white/5">
+      <footer id="contact" className="relative bg-neutral-950 py-32 px-6 overflow-hidden border-t border-white/5">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-[1.5fr_1fr] gap-20 mb-32">
             
@@ -61,11 +62,16 @@ export const Footer = () => {
                 <div>
                   <h4 className="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-6">Sitemap</h4>
                   <ul className="space-y-4">
-                    {['Home', 'Work', 'About', 'Contact'].map((link) => (
-                      <li key={link}>
-                        <a href={`#${link.toLowerCase()}`} className="text-lg font-light text-neutral-400 hover:text-white transition-colors">
-                          {link}
-                        </a>
+                    {[
+                      { name: 'Home', to: '/' },
+                      { name: 'Work', to: '/work' },
+                      { name: 'About', to: '/#about' },
+                      { name: 'Contact', to: '/#contact' },
+                    ].map((link) => (
+                      <li key={link.name}>
+                        <Link to={link.to} className="text-lg font-light text-neutral-400 hover:text-white transition-colors">
+                          {link.name}
+                        </Link>
                       </li>
                     ))}
                   </ul>

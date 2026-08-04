@@ -22,8 +22,8 @@ export const Navbar = () => {
   }, [location]);
 
   const navItems = [
-    { name: 'Work', to: '/work' },
     { name: 'About', to: '/#about' },
+    { name: 'Work', to: '/#work' },
     { name: 'Services', to: '/#services' },
     { name: 'Contact', to: '/#contact' }
   ];
@@ -43,7 +43,7 @@ export const Navbar = () => {
           transition={{ duration: 0.5 }}
         >
           <Link to="/" className="text-2xl font-bold tracking-tighter mix-blend-difference z-50">
-            ALEX.DESIGN
+            HEYJEN.DESIGN
           </Link>
         </motion.div>
 
