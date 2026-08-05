@@ -1,4 +1,4 @@
- import { defineConfig } from 'vite'
+import { defineConfig } from 'vite'
 import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
@@ -17,7 +17,7 @@ function figmaAssetResolver() {
 }
 
 export default defineConfig({
-  base: '/Heyjen-design/',
+  base: '/',
   plugins: [
     figmaAssetResolver(),
     // The React and Tailwind plugins are both required for Make, even if
@@ -30,4 +30,4 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src/app'),
     },
   },
-}) 
+})
